@@ -4,6 +4,6 @@ namespace Commission.Domain.Repositories;
 
 public interface ISaleRepository
 {
-    void Add(Sale sale);
-    Sale GetById(Guid id);
+    Task Add(Sale sale);
+    Task<Sale> GetById(Guid id);
 }

@@ -12,14 +12,14 @@ public class SaleRepository : ISaleRepository
 		_context = context;
 	}
 
-	public void Add(Sale sale)
+	public async Task Add(Sale sale)
 	{
-		_context.Sales.Add(sale);
-		_context.SaveChanges();
+		await _context.Sales.AddAsync(sale);
+	    await _context.SaveChangesAsync();
 	}
 
-	public Sale GetById(Guid id)
+	public async Task<Sale> GetById(Guid id)
 	{
-		return _context.Sales.Find(id);
+		return await _context.Sales.FindAsync(id);
 	}
 }
