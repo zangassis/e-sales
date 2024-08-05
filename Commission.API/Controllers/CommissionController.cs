@@ -19,7 +19,7 @@ public class CommissionController : ControllerBase
     [Route("calculate")]
     public async Task<IActionResult> CalculateCommission([FromBody] CalculateCommissionRequest request)
     {
-       await _commissionService.CalculateCommission(request.SaleId, request.SaleAmount);
+       await _commissionService.CalculateCommission(request.SaleId, request.Currency, request.SaleAmount);
        return Ok();
     }
 }
