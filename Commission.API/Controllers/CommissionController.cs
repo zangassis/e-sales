@@ -8,9 +8,9 @@ namespace Commission.API.Controllers;
 [Route("api/[controller]")]
 public class CommissionController : ControllerBase
 {
-    private readonly CommissionService _commissionService;
+    private readonly ICommissionService _commissionService;
 
-    public CommissionController(CommissionService commissionService)
+    public CommissionController(ICommissionService commissionService)
     {
         _commissionService = commissionService;
     }
