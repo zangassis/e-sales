@@ -16,10 +16,10 @@ public class CommissionController : ControllerBase
     }
 
     [HttpPost]
-    [Route("calculate")]
-    public async Task<IActionResult> CalculateCommission([FromBody] CalculateCommissionRequest request)
+    [Route("process-commission")]
+    public async Task<IActionResult> ProcessCommission([FromBody] ProcessCommissionRequest request)
     {
-       await _commissionService.CalculateCommission(request.SaleId, request.Currency, request.SaleAmount);
+       await _commissionService.ProcessCommission(request.SaleId, request.Currency, request.SaleAmount);
        return Ok();
     }
 }

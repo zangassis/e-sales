@@ -6,7 +6,6 @@ namespace Commission.Infrastructure.Data;
 public class CommissionDbContext : DbContext
 {
     public DbSet<SaleCommission> SaleCommissions { get; set; }
-    public DbSet<Sale> Sales { get; set; }
 
     public CommissionDbContext(DbContextOptions<CommissionDbContext> options) : base(options)
     {
@@ -22,4 +21,3 @@ public class CommissionDbContext : DbContext
         base.OnModelCreating(modelBuilder);
     }
 }
-

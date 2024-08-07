@@ -15,8 +15,7 @@ builder.Services.AddDbContext<CommissionDbContext>(options =>
 	sqlOptions => sqlOptions.MigrationsAssembly("Commission.Infrastructure")));
 
 builder.Services.AddScoped<ICommissionRepository, CommissionRepository>();
-builder.Services.AddScoped<ISaleRepository, SaleRepository>();
-builder.Services.AddScoped<CommissionService>();
+builder.Services.AddScoped<ICommissionService, CommissionService>();
 
 var app = builder.Build();
 
